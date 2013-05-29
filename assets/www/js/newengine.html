@@ -1,0 +1,76 @@
+<!Doctype Html>
+<html>
+
+	<head>
+	<style>
+		body
+		{
+		margin:0px;
+		padding:0px;
+		-webkit-user-select: none;.
+		}
+		#game
+		{
+			
+			border:5px solid red;
+			margin-left:0px;
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+		}
+	
+	</style>
+	<script type="text/javascript" src="core.js"></script>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var canv = document.getElementById("game");
+		var grid=new BaseGrid(canv);
+		var timer = setInterval(testUpdate,1);
+		var fps=0
+		var fpsdiv = document.getElementById("fpsdiv");
+		var lastFpsUpdateTime=Date.now();
+		function testUpdate()
+		{
+			grid.drawGrid();
+			fps++;
+			
+		}
+		var fpstimer = setInterval(updateFps,1000);
+		function updateFps()
+		{
+			fpsdiv.innerHTML=fps;
+			fps=0;
+		}
+		
+		//var animatetimer = setInterval(animateCanvas,1);
+		var xx=400,yy=0; dir=0
+		function animateCanvas()
+		{
+			
+			dir==0?xx--:xx++;
+			if(xx<0)
+			{
+				xx=0;
+				dir=1;
+			}
+			else if(xx>800)
+			{
+			xx=800;
+			dir=0;
+			}
+			grid.origin={x:xx,y:yy};
+		}
+		
+	}
+	</script>
+	
+	</head>
+	
+	<body>
+		<div style="position:relative;">
+		<div id="testdiv" style="position: absolute; width:200px;height:200px; border:3px solid green;">iuiouoiuoi</div>
+		<canvas id="game" width="800px" height="400"></canvas>
+		<div id="fpsdiv"></div>
+		</div>
+	</body>
+
+</html>

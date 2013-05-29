@@ -1,0 +1,1 @@
+var ActivityType = Class.create({		//Constructor Method	initialize: function(){		this.id=0;		this.operation=null;	},		//Properties:	id:0,	operation:null,			//Methods:		myMethod:function(){		}});

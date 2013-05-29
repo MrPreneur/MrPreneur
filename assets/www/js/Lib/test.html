@@ -1,0 +1,21 @@
+<html>
+<head>
+	<script src="prototype.js"></script>
+	<script src="test.js"></script>
+	<script>
+	function alerthi()
+		{
+			console.log(this);
+		}
+		var obj = new test();
+		obj.testMethod(function(){console.log(this)});
+		//obj.testOver("goo");
+		
+		
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>
